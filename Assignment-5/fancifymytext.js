@@ -22,12 +22,12 @@ function applyStyle() {
     var textArea = document.getElementById("text-area");
     var fancy = document.getElementById("fancy");
     var boring = document.getElementById("boring");
-    if (document.getElementById("fancy").checked) {
+    if (fancy.checked) {
         textArea.style.fontWeight = "bold";
         textArea.style.color = "blue";
         textArea.style.textDecoration = "underline";
     }
-    if (document.getElementById("boring").checked) {
+    if (boring.checked) {
         textArea.style.fontWeight = "normal";
         textArea.style.color = "black";
         textArea.style.textDecoration = "none";
