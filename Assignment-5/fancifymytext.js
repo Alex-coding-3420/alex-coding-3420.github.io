@@ -1,11 +1,9 @@
 function boldText() {
-    alert("Bigger Text!");
     var text = document.getElementById('text-area');
     text.style.fontSize = '24pt';
 }
 
 function upperCase() {
-    alert("Uppercase Text!");
     var text = document.getElementById('text-area');
     text.value = text.value.toUpperCase();
 
