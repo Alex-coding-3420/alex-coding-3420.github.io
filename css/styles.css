@@ -206,3 +206,19 @@ a:visited {
   justify-content: space-between;
   align-items: center;
 }
+
+.mentor {
+  font-size: 1.6rem;
+}
+
+.mentor .list-item a {
+  display: flex;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+.mentor .list-item a:hover {
+  color: #fb5012;
+}
+.frontend-end {
+  grid-template-columns: 6fr 4fr;
+}
