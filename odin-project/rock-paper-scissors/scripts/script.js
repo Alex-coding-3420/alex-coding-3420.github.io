@@ -1,81 +1,87 @@
 'use strict';
 
-const choices = ['rock', 'paper', 'scissors'];
-let scores = [0, 0];
-
-const winCondition = {
+let scores = {
+  player: 0,
+  computer: 0,
+};
+const options = ['rock', 'paper', 'scissors'];
+const winConditions = {
   rock: 'scissors',
-  scissors: 'paper',
   paper: 'rock',
+  scissors: 'paper',
 };
 
-function getValidPlayerChoice() {
-  let player = '';
+const getComputerChoice = () =>
+  options[Math.floor(Math.random() * options.length)];
 
-  while (!choices.includes(player)) {
-    player = String(prompt('Rock, paper, or scissors?')).trim().toLowerCase();
-    if (choices.includes(player)) {
+const getValidPlayerChoice = () => {
+  let player = '';
+  while (!options.includes(player)) {
+    player = String(prompt('Rock, Paper, or Scissors?')).toLowerCase().trim();
+    if (options.includes(player)) {
       break;
     } else {
-      alert('Invalid option. Please choose rock, paper, or scissors.');
+      alert('Invalid option. Please choose from the following options');
     }
   }
   return player;
-}
+};
 
-const getComputerChoice = () =>
-  choices[Math.floor(Math.random() * choices.length)];
-
-function playRound(playerSelection, computerSelection) {
-  const player = playerSelection.toLowerCase();
-  const computer = computerSelection.toLowerCase();
-
-  const winner = determineWinner(player, computer);
-  if (winner === 'tie') {
-    alert('Tie! Please try again');
-    return 'tie';
-  }
-
-  updateScores(winner);
-  console.log(
-    `${
-      winner === 'player' ? 'You win!' : 'You lose!'
-    } ${playerSelection} beats ${computerSelection}`
-  );
-  return winner;
-}
-
-function determineWinner(player, computer) {
+const determineWinner = (player, computer) => {
   if (player === computer) {
-    return 'tie';
-  } else if (winCondition[player] === computer) {
+    return `tie`;
+  }
+  if (winConditions[player] === computer) {
     return 'player';
   } else {
     return 'computer';
   }
-}
+};
 
-function updateScores(winner) {
-  if (winner === 'player') {
-    scores[0]++;
-  } else if (winner === 'computer') {
-    scores[1]++;
+const updateScores = (winner) => {
+  scores[winner]++;
+};
+
+const displayWinner = (winner, player, computer) => {
+  alert(
+    `${
+      winner === 'player'
+        ? `You win! ${player} beats ${computer}`
+        : `You lose! ${computer} beats ${player}`
+    } `
+  );
+};
+
+function round(player, computer) {
+  const winner = determineWinner(player, computer);
+  if (winner === 'tie') {
+    alert('tie');
+    return 'tie';
   }
+  updateScores(winner);
+  displayWinner(winner, player, computer);
+  return winner;
 }
 
 function game() {
-  scores = [0, 0];
-  let i = 0;
-  while (i < 5) {
-    const playerChoice = getValidPlayerChoice();
-    const computerChoice = getComputerChoice();
-    const roundResult = playRound(playerChoice, computerChoice);
-    console.log(`Player: ${scores[0]}, Computer: ${scores[1]}`);
+  scores = {
+    player: 0,
+    computer: 0,
+  };
+  let rounds = 0;
+  while (rounds < 5) {
+    let player = getValidPlayerChoice();
+    let computer = getComputerChoice();
+    console.log(`player ${player}`, `computer ${computer}`);
+    let roundResult = round(player, computer);
     if (roundResult !== 'tie') {
-      i++;
+      rounds++;
     }
   }
-  alert(scores[0] > scores[1] ? 'Player Wins!' : 'Computer Wins!');
+  alert(
+    scores['player'] > scores['computer']
+      ? `Player wins! Player: ${scores['player']}, Computer: ${scores['computer']}`
+      : `Computer wins! Player: ${scores['player']}, Computer: ${scores['computer']}`
+  );
 }
-
 game();
