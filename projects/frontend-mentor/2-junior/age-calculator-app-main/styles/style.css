@@ -1,0 +1,94 @@
+@font-face {
+  font-family: 'Poppins';
+  src: url('/assets/fonts/Poppins-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Poppins';
+  src: url('/assets/fonts/Poppins-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Poppins';
+  src: url('/assets/fonts/Poppins-BoldItalic.ttf') format('truetype');
+  font-weight: bold;
+  font-style: italic;
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: gray;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100dvh;
+  font-family: 'Poppins';
+}
+
+.app {
+  background-color: hsl(0, 0%, 100%);
+  padding: 2rem;
+  border-radius: 15px;
+  border-bottom-right-radius: 100px;
+  width: 25rem;
+}
+
+label {
+  display: block;
+  color: hsl(0, 1%, 44%);
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+}
+
+input {
+  padding: 0.5rem 1rem;
+  width: 5rem;
+}
+
+.form {
+  display: flex;
+  gap: 1.5rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid lightgray;
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.text-content {
+  font-size: 2rem;
+  font-weight: 700;
+  font-style: italic;
+}
+
+.text-content span {
+  color: hsl(259, 100%, 65%);
+}
+
+.text-content .text {
+  color: hsl(0, 0%, 8%);
+  font-style: italic;
+  font-weight: 700;
+}
+
+.arrow-wrapper {
+  position: absolute;
+  bottom: 0;
+  left: 100%;
+}
+.arrow {
+  box-sizing: content-box;
+  background-color: hsl(259, 100%, 65%);
+  border-radius: 50%;
+  height: 18px;
+  width: 18px;
+  padding: 10px;
+  transform: translate(-50%, 65%);
+}
