@@ -11,8 +11,14 @@ const winCondition = {
 
 function getValidPlayerChoice() {
   let player = '';
+
   while (!choices.includes(player)) {
     player = String(prompt('Rock, paper, or scissors?')).trim().toLowerCase();
+    if (choices.includes(player)) {
+      break;
+    } else {
+      alert('Invalid option. Please choose rock, paper, or scissors.');
+    }
   }
   return player;
 }
@@ -26,7 +32,7 @@ function playRound(playerSelection, computerSelection) {
 
   const winner = determineWinner(player, computer);
   if (winner === 'tie') {
-    console.log('Tie! Please try again.');
+    alert('Tie! Please try again');
     return 'tie';
   }
 
