@@ -74,18 +74,13 @@ function round(player, computer) {
 }
 
 function game(playerChoice) {
-  if (scores.player < 3 && scores.computer < 3) {
-    // displayWinnerId.textContent = '';
+  if (scores.player < 5 && scores.computer < 5) {
     let player = getValidPlayerChoice(playerChoice);
     let computer = getComputerChoice();
     round(player, computer);
   }
-  if (scores.player >= 3 || scores.computer >= 3) {
+  if (scores.player >= 5 || scores.computer >= 5) {
     displayRoundWinner();
-    const buttons = document.querySelector('.option');
-    // buttons.forEach((button) => {
-    //   button.setAttribute('disabled', 'true');
-    // });
   }
 }
 
@@ -95,13 +90,16 @@ function displayRoundWinner() {
       ? `Player wins! Player: ${scores['player']}, Computer: ${scores['computer']}`
       : `Computer wins! Player: ${scores['player']}, Computer: ${scores['computer']}`;
   displayWinnerId.textContent = winner;
+  scores['player'] > scores['computer']
+    ? (displayWinnerId.style.color = 'green')
+    : (displayWinnerId.style.color = 'red');
 }
 
 optionEl.forEach((option) => {
   option.addEventListener('click', (e) => {
     const playerChoice = e.target.textContent.trim();
     game(playerChoice);
-    if (scores.player >= 3 || scores.computer >= 3) {
+    if (scores.player >= 5 || scores.computer >= 5) {
       option.setAttribute('disabled', 'true');
     }
   });
