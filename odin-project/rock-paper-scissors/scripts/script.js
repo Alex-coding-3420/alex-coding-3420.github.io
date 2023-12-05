@@ -20,18 +20,17 @@ const winConditions = {
 const getComputerChoice = () =>
   options[Math.floor(Math.random() * options.length)];
 
+// element objects
+const playerScoreId = document.querySelector('#player-score');
+const computerScoreId = document.querySelector('#computer-score');
+const displayWinnerId = document.querySelector('#display-winner');
+const optionEl = document.querySelectorAll('.option');
+const newGameBtn = document.querySelector('#new-game-btn');
+
 // Propmts user to enter either rock, paper, or scissors.
 // If the user enters a different value, they will be alerted to enter on of three choices
-const getValidPlayerChoice = () => {
-  let player = '';
-  while (!options.includes(player)) {
-    player = String(prompt('Rock, Paper, or Scissors?')).toLowerCase().trim();
-    if (options.includes(player)) {
-      break;
-    } else {
-      alert('Invalid option. Please choose from the following options');
-    }
-  }
+const getValidPlayerChoice = (playerChoice) => {
+  const player = String(playerChoice.toLowerCase().trim());
   return player;
 };
 
@@ -50,23 +49,23 @@ const determineWinner = (player, computer) => {
 // increments the winner's score by 1
 const updateScores = (winner) => {
   scores[winner]++;
+  const winnerText = `#${winner}-score`;
+  document.querySelector(winnerText).textContent = scores[winner];
 };
 
 // Alerts the user if the user or computer won the round
 const displayWinner = (winner, player, computer) => {
-  alert(
-    `${
-      winner === 'player'
-        ? `You win! ${player} beats ${computer}`
-        : `You lose! ${computer} beats ${player}`
-    } `
-  );
+  displayWinnerId.textContent = `${
+    winner === 'player'
+      ? `You win! ${player} beats ${computer}`
+      : `You lose! ${computer} beats ${player}`
+  } `;
 };
 
 function round(player, computer) {
   const winner = determineWinner(player, computer);
   if (winner === 'tie') {
-    alert('tie');
+    displayWinnerId.textContent = 'tie';
     return 'tie';
   }
   updateScores(winner);
@@ -74,25 +73,53 @@ function round(player, computer) {
   return winner;
 }
 
-function game() {
+function game(playerChoice) {
+  if (scores.player < 3 && scores.computer < 3) {
+    // displayWinnerId.textContent = '';
+    let player = getValidPlayerChoice(playerChoice);
+    let computer = getComputerChoice();
+    round(player, computer);
+  }
+  if (scores.player >= 3 || scores.computer >= 3) {
+    displayRoundWinner();
+    const buttons = document.querySelector('.option');
+    // buttons.forEach((button) => {
+    //   button.setAttribute('disabled', 'true');
+    // });
+  }
+}
+
+function displayRoundWinner() {
+  const winner =
+    scores['player'] > scores['computer']
+      ? `Player wins! Player: ${scores['player']}, Computer: ${scores['computer']}`
+      : `Computer wins! Player: ${scores['player']}, Computer: ${scores['computer']}`;
+  displayWinnerId.textContent = winner;
+}
+
+optionEl.forEach((option) => {
+  option.addEventListener('click', (e) => {
+    const playerChoice = e.target.textContent.trim();
+    game(playerChoice);
+    if (scores.player >= 3 || scores.computer >= 3) {
+      option.setAttribute('disabled', 'true');
+    }
+  });
+});
+
+newGameBtn.addEventListener('click', (e) => {
+  init();
+});
+
+function init() {
   scores = {
     player: 0,
     computer: 0,
   };
-  let rounds = 0;
-  while (rounds < 5) {
-    let player = getValidPlayerChoice();
-    let computer = getComputerChoice();
-    console.log(`player ${player}`, `computer ${computer}`);
-    let roundResult = round(player, computer);
-    if (roundResult !== 'tie') {
-      rounds++;
-    }
-  }
-  alert(
-    scores['player'] > scores['computer']
-      ? `Player wins! Player: ${scores['player']}, Computer: ${scores['computer']}`
-      : `Computer wins! Player: ${scores['player']}, Computer: ${scores['computer']}`
-  );
+  playerScoreId.textContent = 0;
+  computerScoreId.textContent = 0;
+  displayWinnerId.textContent = 'Rock, paper, or scissors?';
+  optionEl.forEach((option) => {
+    option.removeAttribute('disabled');
+  });
 }
-game();

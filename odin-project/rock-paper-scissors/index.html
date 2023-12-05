@@ -4,7 +4,60 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script defer src="./scripts/script.js"></script>
+    <link
+      rel="stylesheet"
+      href="//use.fontawesome.com/releases/v5.0.7/css/all.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/styles.css" />
     <title>Rock Paper Scissors</title>
   </head>
-  <body></body>
+  <body>
+    <main id="main">
+      <header id="header">
+        <div class="container">
+          <h1 class="title">Rock, Paper, Scissors</h1>
+        </div>
+      </header>
+      <section id="game-section">
+        <div class="container">
+          <div class="game-scores">
+            <div class="game-score">
+              <p class="user-name">Player</p>
+              <p class="score" id="player-score">0</p>
+            </div>
+            <div class="game-score">
+              <p class="user-name">Computer</p>
+              <p class="score" id="computer-score">0</p>
+            </div>
+          </div>
+          <div id="display-winner">
+            <p>Rock, paper, or scissors?</p>
+          </div>
+          <div class="game-options">
+            <div class="option">
+              <i class="far fa-hand-rock"></i>
+              <p class="option-title">Rock</p>
+            </div>
+            <div class="option">
+              <i class="far fa-hand-paper"></i>
+              <p class="option-title">Paper</p>
+            </div>
+            <div class="option">
+              <i class="far fa-hand-scissors"></i>
+              <p class="option-title">Scissors</p>
+            </div>
+          </div>
+          <div class="new-game-wrapper">
+            <a href="#" id="new-game-btn">New Game?</a>
+          </div>
+       
+      </section>
+    </main>
+  </body>
 </html>
