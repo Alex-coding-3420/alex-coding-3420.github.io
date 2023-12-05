@@ -26,6 +26,9 @@ const computerScoreId = document.querySelector('#computer-score');
 const displayWinnerId = document.querySelector('#display-winner');
 const optionEl = document.querySelectorAll('.option');
 const newGameBtn = document.querySelector('#new-game-btn');
+const playerStats = document.querySelector('#player-stats');
+const computerStats = document.querySelector('#computer-stats');
+let toggleWinnerClass;
 
 // Propmts user to enter either rock, paper, or scissors.
 // If the user enters a different value, they will be alerted to enter on of three choices
@@ -55,17 +58,20 @@ const updateScores = (winner) => {
 
 // Alerts the user if the user or computer won the round
 const displayWinner = (winner, player, computer) => {
-  displayWinnerId.textContent = `${
-    winner === 'player'
-      ? `You win! ${player} beats ${computer}`
-      : `You lose! ${computer} beats ${player}`
-  } `;
+  if (winner === 'player') {
+    displayWinnerId.textContent = `You win! ${player} beats ${computer}`;
+    displayWinnerId.style.color = '#69db7c';
+  } else {
+    displayWinnerId.textContent = `You lose! ${computer} beats ${player}`;
+    displayWinnerId.style.color = '#fa5252';
+  }
 };
 
 function round(player, computer) {
   const winner = determineWinner(player, computer);
   if (winner === 'tie') {
     displayWinnerId.textContent = 'tie';
+    displayWinnerId.style.color = '#fff';
     return 'tie';
   }
   updateScores(winner);
@@ -85,14 +91,21 @@ function game(playerChoice) {
 }
 
 function displayRoundWinner() {
-  const winner =
-    scores['player'] > scores['computer']
-      ? `Player wins! Player: ${scores['player']}, Computer: ${scores['computer']}`
-      : `Computer wins! Player: ${scores['player']}, Computer: ${scores['computer']}`;
-  displayWinnerId.textContent = winner;
-  scores['player'] > scores['computer']
-    ? (displayWinnerId.style.color = 'green')
-    : (displayWinnerId.style.color = 'red');
+  if (scores['player'] > scores['computer']) {
+    displayWinnerId.textContent = `Player wins! Player: ${scores['player']}, Computer: ${scores['computer']}`;
+    // playerStats.classList.add('winner');
+    addToggleWinner(playerStats);
+  } else {
+    displayWinnerId.textContent = `Computer wins! Player: ${scores['player']}, Computer: ${scores['computer']}`;
+    // computerStats.classList.add('winner');
+    addToggleWinner(computerStats);
+  }
+}
+
+function toggleWinnerF(winner) {
+  setInterval(() => {
+    winnerElement.classList.toggle('winner');
+  }, 1000);
 }
 
 optionEl.forEach((option) => {
@@ -109,6 +122,15 @@ newGameBtn.addEventListener('click', (e) => {
   init();
 });
 
+function addToggleWinner(winner) {
+  toggleWinnerClass = setInterval(() => {
+    winner.classList.toggle('winner');
+  }, 1000);
+}
+function removeToggleWinner() {
+  clearInterval(toggleWinnerClass);
+}
+
 function init() {
   scores = {
     player: 0,
@@ -117,6 +139,10 @@ function init() {
   playerScoreId.textContent = 0;
   computerScoreId.textContent = 0;
   displayWinnerId.textContent = 'Rock, paper, or scissors?';
+  displayWinnerId.style.color = '#fff';
+  playerStats.classList.remove('winner');
+  computerStats.classList.remove('winner');
+  removeToggleWinner();
   optionEl.forEach((option) => {
     option.removeAttribute('disabled');
   });

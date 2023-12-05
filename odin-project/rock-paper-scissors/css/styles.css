@@ -41,8 +41,7 @@ a:visited {
   flex: 1;
 }
 .game-score {
-  flex: 2;
-
+  flex: 1;
   padding: 1.5rem;
   max-width: 400px;
   min-height: 200px;
@@ -103,4 +102,9 @@ a:visited {
   padding: 0.6rem 1.2rem;
   border-radius: 10px;
   transition: all 0.3s ease;
+}
+
+.winner {
+  color: #495057;
+  background-color: #e9ecef;
 }
