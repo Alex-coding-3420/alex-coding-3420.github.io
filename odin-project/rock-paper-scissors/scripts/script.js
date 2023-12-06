@@ -104,7 +104,7 @@ function displayRoundWinner() {
 
 function toggleWinnerF(winner) {
   setInterval(() => {
-    winnerElement.classList.toggle('winner');
+    winner.classList.toggle('winner');
   }, 1000);
 }
 
