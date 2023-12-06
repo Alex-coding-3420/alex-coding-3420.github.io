@@ -58,17 +58,10 @@ a:visited {
 #display-winner {
   border-radius: 10px;
   margin: 3rem 0;
-
-  font-size: 0.7rem;
+  padding: 1rem;
+  font-size: 1.2rem;
   text-transform: uppercase;
   font-weight: 700;
-}
-#display-winner p {
-  width: fit-content;
-  border: 1px solid pink;
-  margin: 0 auto;
-  background-color: #495057;
-  padding: 1rem;
 }
 
 .game-options {
