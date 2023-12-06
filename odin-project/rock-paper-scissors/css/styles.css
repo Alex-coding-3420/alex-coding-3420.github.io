@@ -56,13 +56,19 @@ a:visited {
 }
 
 #display-winner {
-  background-color: #495057;
   border-radius: 10px;
   margin: 3rem 0;
-  padding: 1rem;
+
   font-size: 0.7rem;
   text-transform: uppercase;
   font-weight: 700;
+}
+#display-winner p {
+  width: fit-content;
+  border: 1px solid pink;
+  margin: 0 auto;
+  background-color: #495057;
+  padding: 1rem;
 }
 
 .game-options {

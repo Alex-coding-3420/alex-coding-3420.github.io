@@ -93,19 +93,11 @@ function game(playerChoice) {
 function displayRoundWinner() {
   if (scores['player'] > scores['computer']) {
     displayWinnerId.textContent = `Player wins! Player: ${scores['player']}, Computer: ${scores['computer']}`;
-    // playerStats.classList.add('winner');
-    addToggleWinner(playerStats);
+    playerStats.classList.add('winner');
   } else {
     displayWinnerId.textContent = `Computer wins! Player: ${scores['player']}, Computer: ${scores['computer']}`;
-    // computerStats.classList.add('winner');
-    addToggleWinner(computerStats);
+    computerStats.classList.add('winner');
   }
-}
-
-function toggleWinnerF(winner) {
-  setInterval(() => {
-    winner.classList.toggle('winner');
-  }, 1000);
 }
 
 optionEl.forEach((option) => {
@@ -122,20 +114,13 @@ newGameBtn.addEventListener('click', (e) => {
   init();
 });
 
-function addToggleWinner(winner) {
-  toggleWinnerClass = setInterval(() => {
-    winner.classList.toggle('winner');
-  }, 1000);
-}
-function removeToggleWinner() {
-  clearInterval(toggleWinnerClass);
-}
-
 function init() {
   scores = {
     player: 0,
     computer: 0,
   };
+  computerStats.classList.remove('winner');
+  playerStats.classList.remove('winner');
   playerScoreId.textContent = 0;
   computerScoreId.textContent = 0;
   displayWinnerId.textContent = 'Rock, paper, or scissors?';
