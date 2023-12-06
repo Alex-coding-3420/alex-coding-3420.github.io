@@ -1,0 +1,95 @@
+/* Global styles */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: #fec5bb;
+  font-family: 'Pacifico', cursive;
+  color: #fcbf49;
+}
+
+.title {
+  padding: 1rem 0;
+  text-align: center;
+  font-size: 2.3rem;
+}
+
+.container {
+  max-width: 50rem;
+  margin: 20px auto;
+  background-color: #ef476f;
+  border-radius: 10px;
+  padding: 0 1rem;
+  box-shadow: 0 3px 0 3px rgba(0, 0, 0, 0.3);
+  position: relative;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.pixel-container {
+  background-color: #cccccc;
+  max-width: 35rem;
+  min-height: 35rem;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+}
+
+.input-wrapper input {
+  display: block;
+  height: 50px;
+  width: 80px;
+  cursor: pointer;
+  margin: 10px auto;
+  box-shadow: 0 3px 0 10px rgba(0, 0, 0, 0.9);
+  padding: 0;
+}
+
+.input-wrapper label {
+  font-size: 1.4rem;
+}
+
+/* HIDE ARROWS */
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type='number'] {
+  -moz-appearance: textfield;
+  font-size: 1.4rem;
+}
+
+.tools {
+  padding: 1rem 1.5rem;
+}
+
+.banner {
+  position: absolute;
+  background-color: #fff;
+  color: #b08633;
+  top: 45px;
+  left: -80px;
+  padding: 10px 3.5rem;
+  rotate: -45deg;
+  z-index: 1;
+  border-style: double;
+}
+
+/* Media queries for responsiveness */
+@media screen and (max-width: 768px) {
+  .container {
+    max-width: 90%;
+  }
+}

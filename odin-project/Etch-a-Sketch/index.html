@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles/styles.css" />
+
+    <title>Etch-a-Sketch | Odin Project</title>
+  </head>
+  <body>
+    <main id="etch">
+      <div class="container">
+        <h1 class="title">Etch-a-Sketch</h1>
+        <div class="pixel-container"></div>
+        <aside class="tools flex">
+          <div class="input-wrapper">
+            <label for="color-picker">Choose Color:</label>
+            <input
+              type="color"
+              name="color-picker"
+              id="color-picker"
+              value="#777777"
+            />
+          </div>
+          <div class="input-wrapper">
+            <label for="grid-size">Choose Grid Size:</label>
+            <input
+              type="number"
+              name="grid-size"
+              id="grid-size"
+              min="1"
+              max="100"
+            />
+          </div>
+        </aside>
+        <p class="banner">An Odin Project Challenge</p>
+      </div>
+    </main>
+    <script src="./script/script.js"></script>
+  </body>
+</html>
