@@ -7,13 +7,10 @@ const gridSize = document.querySelector('#grid-size');
 let isDragging = false;
 
 function createGrid(num) {
-  const containerWidth = parseFloat(getComputedStyle(container).width); // Get container width in pixels
-  const pixelSize = containerWidth / num;
   container.innerHTML = '';
   for (let i = 0; i < num * num; i++) {
     const div = document.createElement('div');
-    div.style.width = `${pixelSize}px`;
-    div.style.height = `${pixelSize}px`;
+    div.style.width = `${100 / num}%`;
     div.style.border = `1px solid #999`;
     div.classList.add('pixel');
     container.appendChild(div);

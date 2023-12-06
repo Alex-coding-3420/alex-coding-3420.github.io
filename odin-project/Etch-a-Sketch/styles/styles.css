@@ -14,12 +14,12 @@ body {
 .title {
   padding: 1rem 0;
   text-align: center;
-  font-size: 2.3rem;
+  font-size: 1.8rem;
 }
 
 .container {
   max-width: 50rem;
-  margin: 20px auto;
+  margin: 10px auto;
   background-color: #ef476f;
   border-radius: 10px;
   padding: 0 1rem;
@@ -45,16 +45,15 @@ body {
 
 .input-wrapper input {
   display: block;
-  height: 50px;
+  height: 40px;
   width: 80px;
   cursor: pointer;
   margin: 10px auto;
-  box-shadow: 0 3px 0 10px rgba(0, 0, 0, 0.9);
-  padding: 0;
+  border: none;
 }
 
 .input-wrapper label {
-  font-size: 1.4rem;
+  font-size: 1.2rem;
 }
 
 /* HIDE ARROWS */
@@ -71,8 +70,12 @@ input[type='number'] {
   font-size: 1.4rem;
 }
 
+input[type='color'] {
+  background-color: transparent;
+}
+
 .tools {
-  padding: 1rem 1.5rem;
+  padding: 1rem;
 }
 
 .banner {
@@ -89,7 +92,16 @@ input[type='number'] {
 
 /* Media queries for responsiveness */
 @media screen and (max-width: 768px) {
-  .container {
+  .container,
+  .pixel-container {
     max-width: 90%;
+  }
+
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .input-wrapper label {
+    font-size: 1rem;
   }
 }
