@@ -1,24 +1,8 @@
 'use strict';
 const displayId = document.getElementById('display');
-const calculatorId = document.getElementById('calculator');
 let currentOperand = '';
 let previousOperand = '';
 let currentOperator = null;
-
-// Number btns
-const operandBtns = document.querySelectorAll('.operand');
-// Operator btns
-const operatorBtns = document.querySelectorAll('.operator');
-// AC btn
-const clearBtn = document.querySelector('.clear');
-// +/- btn
-const signBtn = document.querySelector('.sign');
-// % btn
-const percentBtn = document.querySelector('.percent');
-// Decimal btn
-const decimalBtn = document.querySelector('.decimal');
-// Equals btn
-const equalBtn = document.querySelector('.equals');
 
 // Functions
 
@@ -103,7 +87,8 @@ const compute = () => {
 };
 
 // Click events
-calculatorId.addEventListener('click', (e) => {
+document.addEventListener('click', (e) => {
+  console.log(e.target);
   // Operands and operators
   if (e.target.matches('.operand')) {
     appendNumber(e.target.value);
@@ -121,5 +106,23 @@ calculatorId.addEventListener('click', (e) => {
     appendDecimal();
   } else if (e.target.matches('.equals')) {
     compute();
+  }
+});
+
+document.addEventListener('keydown', (e) => {
+  const key = e.key;
+  console.log(e.key);
+  if (key >= '0' && key <= '9') {
+    appendNumber(key);
+  } else if (key == '+' || key == '/' || key == '*' || key == '-') {
+    chooseOperator(key);
+  } else if (key == '=' || key == 'Enter') {
+    compute();
+  } else if (key == 'Backspace') {
+    clearDisplay();
+  } else if (key == '.') {
+    appendDecimal();
+  } else if (key == '%') {
+    appendPercentage();
   }
 });
