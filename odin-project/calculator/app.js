@@ -50,6 +50,9 @@ const appendSign = () => {
 };
 
 const chooseOperator = (operator) => {
+  if (currentOperator !== null) {
+    return;
+  }
   if (previousOperand !== '') {
     compute();
   }
@@ -61,7 +64,7 @@ const chooseOperator = (operator) => {
 const compute = () => {
   let computation;
   let prev = parseFloat(previousOperand);
-  console.log(prev);
+
   let cur = parseFloat(currentOperand);
   console.log(cur);
   switch (currentOperator) {
@@ -107,6 +110,7 @@ document.addEventListener('click', (e) => {
   } else if (e.target.matches('.equals')) {
     compute();
   }
+  console.log(currentOperand);
 });
 
 document.addEventListener('keydown', (e) => {
