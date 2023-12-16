@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./css/normalize.css" />
+    <!-- <link rel="stylesheet" href="./css/normalize.css" /> -->
     <link rel="stylesheet" href="./css/fonts.css" />
     <link rel="stylesheet" href="./css/style.css" />
     <script defer src="./script/app.js"></script>
@@ -14,43 +14,45 @@
       <div class="flex">
         <!-- Left -->
         <section id="left" class="card-container">
-          <!-- Logo -->
-          <div class="logo-container">
-            <svg
-              class="logo"
-              width="100"
-              height="100"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <rect x="0" y="0" width="100" height="100" fill="#22b8cf" />
-              <text
-                x="50"
-                y="65"
-                text-anchor="middle"
-                font-family="'Norse Bold',system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'"
-                font-size="40"
-                font-weight="600"
-                letter-spacing="-1"
+          <div class="left-container">
+            <!-- Logo -->
+            <div class="logo-container">
+              <svg
+                class="logo"
+                width="100"
+                height="100"
+                xmlns="http://www.w3.org/2000/svg"
               >
-                AE
-              </text>
-            </svg>
+                <rect x="0" y="0" width="100" height="100" fill="#d0ebff" />
+                <text
+                  x="50"
+                  y="65"
+                  text-anchor="middle"
+                  font-family="'Harmony',system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'"
+                  font-size="40"
+                  font-weight="600"
+                  letter-spacing="-1"
+                >
+                  AE
+                </text>
+              </svg>
+            </div>
+            <!-- background img creator -->
+            <p class="img-creator">
+              Photo by
+              <a
+                href="https://unsplash.com/@jayeshjoshi12?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash"
+              >
+                Jayesh Joshi
+              </a>
+              on
+              <a
+                href="https://unsplash.com/photos/a-room-with-blue-walls-and-a-red-carpet-F3zB3nUox_8?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash"
+              >
+                Unsplash
+              </a>
+            </p>
           </div>
-          <!-- background img creator -->
-          <p class="img-creator">
-            Photo by
-            <a
-              href="https://unsplash.com/@jayeshjoshi12?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash"
-            >
-              Jayesh Joshi
-            </a>
-            on
-            <a
-              href="https://unsplash.com/photos/a-room-with-blue-walls-and-a-red-carpet-F3zB3nUox_8?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash"
-            >
-              Unsplash
-            </a>
-          </p>
         </section>
         <!-- Right -->
         <section id="right" class="card-container">
@@ -135,7 +137,7 @@
                   />
                 </div>
               </div>
-              <input type="submit" value="Create Account" />
+              <a href="#" class="btn">Create Account</a>
             </form>
             <!-- Footer -->
             <footer>

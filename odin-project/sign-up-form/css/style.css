@@ -1,9 +1,65 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
 :root {
-  --font-stack: Colus, system-ui, 'Segoe UI', Roboto, Helvetica, Arial,
-    sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  --font-stack: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif,
+    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
   --color-font: #042e35;
+  --color-right-bg: #ffe066;
+  --color-left: #d0ebff;
 }
 
 body {
   font-family: var(--font-stack);
+  color: var(--color-font);
+}
+
+a:link,
+a:visited {
+  text-decoration: none;
+  color: var(--color-font);
+}
+
+.flex {
+  display: flex;
+}
+
+.card-container {
+  height: 100vh;
+}
+
+/* Left container */
+#left {
+  flex: 2;
+  background: url(../img/orange.jpg) no-repeat center center/cover;
+  text-align: center;
+}
+
+.left-container {
+  position: relative;
+  height: 100%;
+  padding-top: 50px;
+}
+
+.img-creator {
+  position: absolute;
+  bottom: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+}
+
+.logo-container {
+  display: flex;
+  justify-content: center;
+}
+
+.logo {
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+}
+
+#right {
+  flex: 3;
 }
