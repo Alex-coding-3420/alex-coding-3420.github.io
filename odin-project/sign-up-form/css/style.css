@@ -1,0 +1,9 @@
+:root {
+  --font-stack: Colus, system-ui, 'Segoe UI', Roboto, Helvetica, Arial,
+    sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  --color-font: #042e35;
+}
+
+body {
+  font-family: var(--font-stack);
+}
