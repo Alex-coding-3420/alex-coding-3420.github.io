@@ -17,6 +17,11 @@ body {
   display: flex;
 }
 
+.logo {
+  background-color: #20202073;
+  width: 100%;
+}
+
 #left,
 #right {
   height: 100vh;
@@ -51,12 +56,79 @@ body {
 }
 
 .left-container p {
-  background: #fff9db34;
-  width: 100%;
   text-align: center;
 }
 
 #right {
   flex: 3;
   background-color: var(--right-bg);
+}
+
+.header {
+  padding: 2rem;
+}
+
+.header h2 {
+  line-height: 1.7;
+  margin-bottom: 2rem;
+}
+
+.form {
+  width: 70%;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.form-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2.5rem;
+  gap: 2rem;
+}
+
+.footer {
+  background-color: var(--color-font-alpha);
+  color: #333;
+  height: 20vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.right-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+label {
+  display: none;
+}
+
+input {
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid var(--color-font-alpha);
+  padding: 0.8rem 0;
+  transition: all 0.3s ease;
+}
+
+input:focus {
+  border-color: var(--color-font);
+}
+
+input:focus::placeholder {
+  transform: translateY(-25px); /* Move the placeholder upwards */
+  transition: transform 0.3s ease;
+  font-weight: 600;
+}
+
+input:focus {
+  outline: none; /* Remove default focus outline */
+  border-color: var(--color-font);
+}
+
+input::placeholder {
+  transition: transform 0.3s ease;
 }
