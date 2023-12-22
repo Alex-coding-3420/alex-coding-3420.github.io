@@ -26,7 +26,7 @@ Users should be able to:
 ### Links
 
 - [Solution URL](https://github.com/Alex-coding-3420/alex-coding-3420.github.io/tree/main/projects/frontend-mentor/1-newbie/blog-preview-card-main)
-- [Live Preview URL](https://alex-coding-3420.github.io/projects/frontend-mentor/1-newbie/blog-preview-card-main/)
+- [Live Preview URL](https://alex-coding-3420.github.io/projects/frontend-mentor/1-newbie/blog-preview-card-main/index.html)
 
 ## My process
 
