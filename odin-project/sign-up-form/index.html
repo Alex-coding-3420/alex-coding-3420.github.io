@@ -15,43 +15,13 @@
         <!-- Left -->
         <section id="left" class="card-container">
           <div class="left-container">
-            <!-- Logo -->
-            <div class="logo-container">
-              <svg
-                class="logo"
-                width="100"
-                height="100"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <rect x="0" y="0" width="100" height="100" fill="#d0ebff" />
-                <text
-                  x="50"
-                  y="65"
-                  text-anchor="middle"
-                  font-family="'Harmony',system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'"
-                  font-size="40"
-                  font-weight="600"
-                  letter-spacing="-1"
-                >
-                  AE
-                </text>
-              </svg>
-            </div>
-            <!-- background img creator -->
-            <p class="img-creator">
-              Photo by
-              <a
-                href="https://unsplash.com/@jayeshjoshi12?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash"
-              >
-                Jayesh Joshi
-              </a>
-              on
-              <a
-                href="https://unsplash.com/photos/a-room-with-blue-walls-and-a-red-carpet-F3zB3nUox_8?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash"
-              >
-                Unsplash
-              </a>
-            </p>
+            <img
+              src="./img/logo.svg"
+              alt="Web Logo"
+              height="150px"
+              width="150px"
+            />
+            <p style="color: white">Welcome</p>
           </div>
         </section>
         <!-- Right -->
@@ -70,27 +40,24 @@
             <form>
               <div class="form-row">
                 <div class="form-item">
-                  <label for="firstName"></label>
+                  <label for="firstName">First Name</label>
                   <input type="text" id="firstName" name="firstName" required />
-                  <span class="text">First Name</span>
                 </div>
 
                 <div class="form-item">
-                  <label for="lastName"></label>
+                  <label for="lastName">Last Name</label>
                   <input type="text" id="lastName" name="lastName" required />
-                  <span class="text">Last</span>
                 </div>
               </div>
 
               <div class="form-row">
                 <div class="form-item">
-                  <label for="email"></label>
+                  <label for="email">Email</label>
                   <input type="email" id="email" name="email" required />
-                  <span class="text">email</span>
                 </div>
 
                 <div class="form-item">
-                  <label for="phone"></label>
+                  <label for="phone">Phone Number</label>
                   <input
                     type="tel"
                     id="phone"
@@ -98,13 +65,12 @@
                     pattern="[0-9]{10}"
                     required
                   />
-                  <span class="text">Email</span>
                 </div>
               </div>
 
               <div class="form-row">
                 <div class="form-item">
-                  <label for="password"></label>
+                  <label for="password">Password</label>
                   <!-- 
                     This regular expression enforces the following password criteria:
                     - Minimum 8 characters
@@ -120,11 +86,10 @@
                     pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^a-zA-Z\d]).{8,}$"
                     required
                   />
-                  <span class="text">Password</span>
                 </div>
 
                 <div class="form-item">
-                  <label for="confirmPassword"></label>
+                  <label for="confirmPassword">Confirm Password</label>
                   <!-- 
                     This regular expression enforces the following password criteria:
                     - Minimum 8 characters
@@ -140,7 +105,6 @@
                     pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^a-zA-Z\d]).{8,}$"
                     required
                   />
-                  <span class="text">Confirm Password</span>
                 </div>
               </div>
               <a href="#" class="btn">Create Account</a>
