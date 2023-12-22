@@ -1,0 +1,62 @@
+:root {
+  --font-stack: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif,
+    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  --color-font: #fff9db;
+  --color-font-alpha: #fff9dbc0;
+  --right-bg: #202020;
+  --left: #d0ebff;
+}
+
+body {
+  font-family: var(--font-stack);
+  line-height: 1.5;
+  color: var(--color-font);
+}
+
+.flex {
+  display: flex;
+}
+
+#left,
+#right {
+  height: 100vh;
+}
+
+.logo {
+  opacity: 0;
+  animation: logo-animate 3s ease forwards;
+}
+
+@keyframes logo-animate {
+  100% {
+    opacity: 1;
+  }
+}
+
+#left {
+  flex: 2;
+  background: url(../img/black-texture.jpg) no-repeat center center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.left-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 80%;
+  width: 100%;
+}
+
+.left-container p {
+  background: #fff9db34;
+  width: 100%;
+  text-align: center;
+}
+
+#right {
+  flex: 3;
+  background-color: var(--right-bg);
+}
