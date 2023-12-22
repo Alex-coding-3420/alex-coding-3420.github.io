@@ -1,0 +1,77 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+@font-face {
+  font-family: 'Work Sans';
+  src: url(../fonts/WorkSans-VariableFont_wght.ttf);
+}
+
+:root {
+  --font-stack: 'Work Sans', system-ui, 'Segoe UI', Roboto, Helvetica, Arial,
+    sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  --white: hsl(0, 0%, 100%);
+  --light-pink: hsl(275, 100%, 97%);
+  --gray-purple: hsl(292, 16%, 49%);
+  --dark-purple: hsl(292, 42%, 14%);
+  --max-width: 38rem;
+}
+
+body {
+  background-color: var(--light-pink);
+  font-family: var(--font-stack);
+  background-image: url(../images/background-pattern-desktop.svg); /* Set the background image */
+  background-position: center top; /* Center horizontally, stick to the top */
+  background-size: 100% auto; /* Cover the width, maintain intrinsic height */
+  background-repeat: no-repeat; /* Prevent the image from repeating */
+  background-attachment: fixed; /* Keep the background fixed at the top */
+  height: 100vh;
+}
+main {
+  height: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1.5;
+}
+
+.container {
+  width: var(--max-width);
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: var(--white);
+  color: #333;
+  border-radius: 15px;
+}
+
+.accordion-container {
+  padding: 1rem 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.accordion-container:last-child {
+  border-bottom: none;
+}
+
+.accordion {
+  color: var(--dark-purple);
+  font-weight: 600;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+}
+
+.accordion:hover {
+  color: var(--gray-purple);
+}
+
+.panel {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.3s ease-out;
+}
