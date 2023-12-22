@@ -74,4 +74,5 @@ main {
   overflow: hidden;
   max-height: 0;
   transition: max-height 0.3s ease-out;
+  color: var(--gray-purple);
 }
