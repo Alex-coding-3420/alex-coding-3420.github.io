@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- <link rel="stylesheet" href="./css/normalize.css" /> -->
+    <link rel="stylesheet" href="./css/reset.css" />
     <link rel="stylesheet" href="./css/fonts.css" />
     <link rel="stylesheet" href="./css/style.css" />
     <script defer src="./script/app.js"></script>
@@ -57,7 +57,7 @@
         <!-- Right -->
         <section id="right" class="card-container">
           <!-- Header -->
-          <div class="container">
+          <div class="right-container">
             <header>
               <h2>
                 This is not a real online service! You know you need something
@@ -70,24 +70,27 @@
             <form>
               <div class="form-row">
                 <div class="form-item">
-                  <label for="firstName">First Name:</label>
+                  <label for="firstName"></label>
                   <input type="text" id="firstName" name="firstName" required />
+                  <span class="text">First Name</span>
                 </div>
 
                 <div class="form-item">
-                  <label for="lastName">Last Name:</label>
+                  <label for="lastName"></label>
                   <input type="text" id="lastName" name="lastName" required />
+                  <span class="text">Last</span>
                 </div>
               </div>
 
               <div class="form-row">
                 <div class="form-item">
-                  <label for="email">Email:</label>
+                  <label for="email"></label>
                   <input type="email" id="email" name="email" required />
+                  <span class="text">email</span>
                 </div>
 
                 <div class="form-item">
-                  <label for="phone">Phone Number:</label>
+                  <label for="phone"></label>
                   <input
                     type="tel"
                     id="phone"
@@ -95,12 +98,13 @@
                     pattern="[0-9]{10}"
                     required
                   />
+                  <span class="text">Email</span>
                 </div>
               </div>
 
               <div class="form-row">
                 <div class="form-item">
-                  <label for="password">Password:</label>
+                  <label for="password"></label>
                   <!-- 
                     This regular expression enforces the following password criteria:
                     - Minimum 8 characters
@@ -116,10 +120,11 @@
                     pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^a-zA-Z\d]).{8,}$"
                     required
                   />
+                  <span class="text">Password</span>
                 </div>
 
                 <div class="form-item">
-                  <label for="confirmPassword">Confirm Password:</label>
+                  <label for="confirmPassword"></label>
                   <!-- 
                     This regular expression enforces the following password criteria:
                     - Minimum 8 characters
@@ -135,6 +140,7 @@
                     pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^a-zA-Z\d]).{8,}$"
                     required
                   />
+                  <span class="text">Confirm Password</span>
                 </div>
               </div>
               <a href="#" class="btn">Create Account</a>
