@@ -7,16 +7,16 @@
 :root {
   --font-stack: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif,
     'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
-  --color-font: #fff9db;
-  --color-font-alpha: #fff9dbc0;
+  --primary-color: #fff9db;
+  --primary-color-alpha: #fff9dbc0;
+  --secondary-color: #c3baaa;
   --right-bg: #202020;
-  --left: #d0ebff;
 }
 
 body {
   font-family: var(--font-stack);
   line-height: 1.5;
-  color: var(--color-font);
+  color: var(--primary-color);
   background-color: var(--right-bg);
 }
 
@@ -30,7 +30,9 @@ body {
 
 .logo {
   opacity: 0;
-  animation: logo-animate 3s ease forwards;
+  animation: logo-animate 3.2s forwards;
+  height: 200px;
+  width: 200px;
 }
 
 @keyframes logo-animate {
@@ -73,11 +75,25 @@ body {
   height: 100%;
   max-width: 80%;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .right-container h1 {
   font-size: 5rem;
-  margin-bottom: 10rem;
+  margin-bottom: 8rem;
+  transform: translateY(-20px);
+  opacity: 0;
+
+  animation: header-translateY 3s ease forwards;
+}
+
+@keyframes header-translateY {
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 .right-container h1,
@@ -88,8 +104,17 @@ body {
 .form {
   width: 80%;
   margin: 0 auto;
+  margin-bottom: 5rem;
+  transform: translateX(200px);
+  opacity: 0;
+  animation: form-translateX 3s ease forwards;
+}
 
-  margin-bottom: 10rem;
+@keyframes form-translateX {
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
 
 .grid {
@@ -106,7 +131,7 @@ body {
   display: inline-block;
   margin-top: 2.5rem;
   grid-column: span 2;
-  background-color: var(--color-font);
+  background-color: var(--primary-color);
   text-decoration: none;
   color: #202020;
   text-align: center;
@@ -119,15 +144,15 @@ input {
   display: block;
   background-color: transparent;
   border: none;
-  border-bottom: 1px solid var(--color-font-alpha);
+  border-bottom: 1px solid var(--primary-color-alpha);
   padding: 0.8rem 0;
   transition: all 0.3s ease;
   width: 100%;
-  color: var(--color-font);
+  color: var(--primary-color);
 }
 
 input:focus {
-  border-color: var(--color-font);
+  border-color: var(--primary-color);
 }
 
 input:focus::placeholder {
@@ -138,16 +163,48 @@ input:focus::placeholder {
 
 input:focus {
   outline: none; /* Remove default focus outline */
-  border-color: var(--color-font);
+  border-color: var(--primary-color);
 }
 
 input::placeholder {
   transition: transform 0.3s ease;
 }
 
-@media (max-width: 500px) {
+.footer {
+  opacity: 0;
+  animation: header-opacity 1.5s 0.5s forwards;
+}
+
+@keyframes header-opacity {
+  to {
+    opacity: 1;
+  }
+}
+
+.footer p a {
+  color: var(--secondary-color);
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 500;
+  border-bottom: 1px solid;
+  border-color: transparent;
+  transition: border-color 3s ease;
+  display: inline-block;
+  padding-bottom: 3px;
+}
+
+.footer p a:hover {
+  border-color: red;
+}
+
+@media screen and (max-width: 650px) {
   .flex {
     flex-direction: column;
+  }
+  .logo {
+    height: 150px;
+    width: 150px;
+    padding: 1rem;
   }
   #left {
     height: 30vh;
@@ -168,18 +225,22 @@ input::placeholder {
   }
 
   .right-container h1 {
-    font-size: 3rem;
-    margin-bottom: 5rem;
+    font-size: 2rem;
+    margin-bottom: 3rem;
   }
 
   .form {
     width: 100%;
+    margin-bottom: 3rem;
   }
   .grid {
     grid-template-columns: 1fr;
   }
   .grid .form-item {
-    margin-bottom: 0;
+    margin-bottom: 1.5rem;
+  }
+  .grid .btn {
+    grid-column: 1;
   }
   input {
     width: 100%;
