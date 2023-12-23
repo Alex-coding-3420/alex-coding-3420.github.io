@@ -4,13 +4,20 @@
   margin: 0;
 }
 
+@font-face {
+  font-family: 'Public Sans';
+  src: url(../fonts/PublicSans[wght].ttf);
+}
+
 :root {
-  --font-stack: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif,
-    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  --font-stack: 'Public Sans', system-ui, 'Segoe UI', Roboto, Helvetica, Arial,
+    sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
   --primary-color: #fff9db;
   --primary-color-alpha: #fff9dbc0;
-  --secondary-color: #c3baaa;
+  --secondary-color: #e9fac8;
   --right-bg: #202020;
+  --border-color: #4c4b42;
+  --border-color-focus: #b3ae99;
 }
 
 body {
@@ -71,6 +78,7 @@ body {
   padding: 5rem 1rem;
 }
 
+/* right-container */
 .right-container {
   height: 100%;
   max-width: 80%;
@@ -81,9 +89,10 @@ body {
 }
 
 .right-container h1 {
-  font-size: 5rem;
+  font-size: 3.7rem;
   margin-bottom: 8rem;
   transform: translateY(-20px);
+  text-transform: uppercase;
   opacity: 0;
 
   animation: header-translateY 3s ease forwards;
@@ -101,6 +110,7 @@ body {
   text-align: center;
 }
 
+/* Form */
 .form {
   width: 80%;
   margin: 0 auto;
@@ -138,35 +148,58 @@ body {
   padding: 1rem 2rem;
   font-weight: 600;
   text-transform: uppercase;
+  transition: background-color 0.3s ease;
 }
 
-input {
+.grid .btn:hover {
+  background-color: var(--secondary-color);
+}
+
+.form-item {
+  position: relative;
+}
+
+label {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  padding: 3px;
+  transition: all 0.3s ease;
+}
+
+label.active {
+  transform: translateY(-200%);
+  background-color: var(--primary-color);
+
+  color: var(--right-bg);
+}
+
+.input {
   display: block;
   background-color: transparent;
   border: none;
-  border-bottom: 1px solid var(--primary-color-alpha);
+  border-bottom: 1px solid;
+  border-color: var(--border-color);
   padding: 0.8rem 0;
   transition: all 0.3s ease;
   width: 100%;
   color: var(--primary-color);
+  transition: all 0.5s ease;
 }
 
-input:focus {
-  border-color: var(--primary-color);
-}
-
-input:focus::placeholder {
-  transform: translateY(-20px); /* Move the placeholder upwards */
+.input:focus::placeholder {
+  transform: translateY(-25px);
   transition: transform 0.3s ease;
   font-weight: 600;
 }
 
-input:focus {
-  outline: none; /* Remove default focus outline */
-  border-color: var(--primary-color);
+.input:focus {
+  outline: none;
+  border-color: var(--border-color-focus);
 }
 
-input::placeholder {
+.input::placeholder {
   transition: transform 0.3s ease;
 }
 
@@ -233,16 +266,20 @@ input::placeholder {
     width: 100%;
     margin-bottom: 3rem;
   }
+
+  .form-item {
+    margin-bottom: 3rem;
+  }
   .grid {
     grid-template-columns: 1fr;
   }
   .grid .form-item {
-    margin-bottom: 1.5rem;
+    margin-bottom: 3rem;
   }
   .grid .btn {
     grid-column: 1;
   }
-  input {
+  .input {
     width: 100%;
   }
 }

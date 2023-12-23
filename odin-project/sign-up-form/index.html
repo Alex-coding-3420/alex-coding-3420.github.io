@@ -27,48 +27,52 @@
             <form class="form">
               <div class="grid">
                 <div class="form-item">
-                  <label for="firstName"></label>
+                  <label for="firstName">First Name</label>
                   <input
+                    class="input"
                     type="text"
-                    placeholder="First Name"
                     id="firstName"
                     name="firstName"
                     required
                   />
+                  <span class="error"></span>
                 </div>
                 <div class="form-item">
-                  <label for="lastName"></label>
+                  <label for="lastName">Last Name</label>
                   <input
+                    class="input"
                     type="text"
-                    placeholder="Last Name"
                     id="lastName"
                     name="lastName"
                     required
                   />
+                  <span class="error"></span>
                 </div>
                 <div class="form-item">
-                  <label for="email"></label>
+                  <label for="email">Email</label>
                   <input
+                    class="input"
                     type="email"
-                    placeholder="Email"
                     id="email"
                     name="email"
                     required
                   />
+                  <span class="error"></span>
                 </div>
                 <div class="form-item">
-                  <label for="phone"></label>
+                  <label for="phone">Phone Number</label>
                   <input
+                    class="input"
                     type="tel"
-                    placeholder="Phone Number"
                     id="phone"
                     name="phone"
                     pattern="[0-9]{10}"
                     required
                   />
+                  <span class="error"></span>
                 </div>
                 <div class="form-item">
-                  <label for="password"></label>
+                  <label for="password">Password</label>
                   <!-- 
                     This regular expression enforces the following password criteria:
                     - Minimum 8 characters
@@ -77,17 +81,18 @@
                     - At least one number
                   -->
                   <input
+                    class="input"
                     type="password"
                     id="password"
-                    placeholder="Password"
                     name="password"
                     minlength="8"
                     pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^a-zA-Z\d]).{8,}$"
                     required
                   />
+                  <span class="error"></span>
                 </div>
                 <div class="form-item">
-                  <label for="confirmPassword"></label>
+                  <label for="confirmPassword">Confirm Password</label>
                   <!-- 
                     This regular expression enforces the following password criteria:
                     - Minimum 8 characters
@@ -96,14 +101,15 @@
                     - At least one number
                   -->
                   <input
+                    class="input"
                     type="password"
                     id="confirmPassword"
-                    placeholder="Confirm Password"
                     name="confirmPassword"
                     minlength="8"
                     pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^a-zA-Z\d]).{8,}$"
                     required
                   />
+                  <span class="error"></span>
                 </div>
                 <a href="#" class="btn">Create Account</a>
               </div>
