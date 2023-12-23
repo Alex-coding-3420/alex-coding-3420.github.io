@@ -1,6 +1,7 @@
 'use strict';
 
 const inputs = document.querySelectorAll('.input');
+const submitBtn = document.querySelector('.submit-btn');
 
 // Event listener for when the input
 inputs.forEach((input) => {
@@ -17,6 +18,17 @@ inputs.forEach((input) => {
     const label = input.previousElementSibling;
     if (input.value === '') {
       label.classList.remove('active');
+    }
+  });
+});
+
+submitBtn.addEventListener('click', () => {
+  inputs.forEach((input) => {
+    const err = input.nextElementSibling;
+    if (input.value === '') {
+      err.textContent = 'Required*';
+    } else {
+      err.textContent = '';
     }
   });
 });

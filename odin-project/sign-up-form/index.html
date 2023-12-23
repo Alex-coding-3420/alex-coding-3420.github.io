@@ -23,6 +23,7 @@
           <!-- Header -->
           <div class="right-container">
             <h1>Get Started</h1>
+
             <!-- Form -->
             <form class="form">
               <div class="grid">
@@ -35,8 +36,19 @@
                     name="firstName"
                     required
                   />
-                  <span class="error"></span>
+                  <span class="error" id="firstNameError"></span>
                 </div>
+                <!-- <div class="form-item">
+                  <label for="firstName">First Name</label>
+                  <input
+                    class="input"
+                    type="text"
+                    id="firstName"
+                    name="firstName"
+                    required
+                  />
+                  <span class="error"></span>
+                </div> -->
                 <div class="form-item">
                   <label for="lastName">Last Name</label>
                   <input
@@ -86,7 +98,6 @@
                     id="password"
                     name="password"
                     minlength="8"
-                    pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^a-zA-Z\d]).{8,}$"
                     required
                   />
                   <span class="error"></span>
@@ -106,19 +117,22 @@
                     id="confirmPassword"
                     name="confirmPassword"
                     minlength="8"
-                    pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^a-zA-Z\d]).{8,}$"
                     required
                   />
                   <span class="error"></span>
                 </div>
-                <a href="#" class="btn">Create Account</a>
+                <button type="submit" class="submit-btn">Create Account</button>
               </div>
             </form>
             <!-- Footer -->
             <footer class="footer">
               <div class="wrapper">
                 <p>
-                  Already have an account? <a href="#" class="login">Log In</a>
+                  Already have an account?
+                  <a href="#" class="login">Log In Here</a>
+                </p>
+                <p class="sidenote">
+                  This is a demo form for <span>The Odin Project</span>
                 </p>
               </div>
             </footer>

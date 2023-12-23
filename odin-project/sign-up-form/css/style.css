@@ -16,8 +16,10 @@
   --primary-color-alpha: #fff9dbc0;
   --secondary-color: #e9fac8;
   --right-bg: #202020;
+  --dark-color: #202020;
   --border-color: #4c4b42;
   --border-color-focus: #b3ae99;
+  --error-color: #e5446d;
 }
 
 body {
@@ -137,13 +139,13 @@ body {
   margin-bottom: 3rem;
 }
 
-.grid .btn {
+.grid .submit-btn {
   display: inline-block;
   margin-top: 2.5rem;
   grid-column: span 2;
   background-color: var(--primary-color);
   text-decoration: none;
-  color: #202020;
+  color: var(--dark-color);
   text-align: center;
   padding: 1rem 2rem;
   font-weight: 600;
@@ -151,12 +153,17 @@ body {
   transition: background-color 0.3s ease;
 }
 
-.grid .btn:hover {
+.grid .submit-btn:hover {
   background-color: var(--secondary-color);
 }
 
 .form-item {
   position: relative;
+}
+
+.error {
+  color: var(--error-color);
+  display: inline-block;
 }
 
 label {
@@ -169,7 +176,7 @@ label {
 }
 
 label.active {
-  transform: translateY(-200%);
+  transform: translateY(-250%);
   background-color: var(--primary-color);
 
   color: var(--right-bg);
@@ -215,19 +222,30 @@ label.active {
 }
 
 .footer p a {
-  color: var(--secondary-color);
+  color: #fff;
   text-decoration: none;
   text-transform: uppercase;
-  font-weight: 500;
+  font-weight: 700;
   border-bottom: 1px solid;
   border-color: transparent;
-  transition: border-color 3s ease;
+  transition: border-color 0.4s;
   display: inline-block;
   padding-bottom: 3px;
 }
 
 .footer p a:hover {
-  border-color: red;
+  border-color: var(--secondary-color);
+}
+
+.sidenote {
+  margin: 1rem 0;
+  font-size: 0.8rem;
+  color: var(--error-color);
+}
+
+.sidenote span {
+  font-weight: 700;
+  font-style: italic;
 }
 
 @media screen and (max-width: 650px) {
@@ -276,7 +294,7 @@ label.active {
   .grid .form-item {
     margin-bottom: 3rem;
   }
-  .grid .btn {
+  .grid .submit-btn {
     grid-column: 1;
   }
   .input {
