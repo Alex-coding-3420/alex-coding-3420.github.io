@@ -141,11 +141,18 @@ p {
 /* Showcase image */
 #showcase .showcase-image {
   max-width: 225px;
-  height: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
 }
 
 .showcase-image .circle-pattern {
+  height: 100%;
   width: 100%;
+  display: inline-block;
+  margin: auto;
+  height: auto;
 }
 
 .btn:link,
@@ -173,6 +180,12 @@ p {
 }
 
 /* Showcase Animations */
+
+/* Delay showcase 
+This animation will delay each line with sequential line animations, 
+with each line being progressively delayed by 1s
+*/
+
 .delay-showcase {
   animation: delayShowcase 1s linear forwards;
 }
@@ -205,5 +218,25 @@ p {
   to {
     opacity: 1;
     transform: translate(0);
+  }
+}
+
+/* rotate pattern
+This animation continuously rotates the showcase image.
+*/
+.circle-pattern {
+  opacity: 0.3;
+  animation: rotateCircle 5s linear infinite;
+}
+
+@keyframes rotateCircle {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }
