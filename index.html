@@ -3,132 +3,37 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./css/styles.css" />
-    <title>Welcome to my Homepage</title>
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <!-- My Stylesheet -->
+    <link rel="stylesheet" href="./assets/css/styles.css" />
+    <!-- Script -->
+    <script defer src="./assets/scripts/script.js"></script>
+    <title>My Portfolio | Homepage</title>
   </head>
   <body>
-    <header>
-      <nav id="navbar" class="border-btm">
-        <a href="#"><h2 class="nav-logo">AE</h2></a>
-        <ul class="nav-items">
-          <li class="nav-item"><a href="#frontend-section">Frontend</a></li>
-          <li class="nav-item">
-            <a href="#fifty-projects-section">50 Projects</a>
-          </li>
-        </ul>
+    <header id="header">
+      <nav id="navbar">
+        <div class="container">
+          <div class="flex">
+            <a href="#"
+              ><img
+                src="./assets/img/logo.svg"
+                class="logo"
+                width="50px"
+                height="50px"
+            /></a>
+            <ul class="links">
+              <li><a href="#about">About</a></li>
+              <li><a href="#project">Projects</a></li>
+              <li><a href="#">Three</a></li>
+            </ul>
+          </div>
+        </div>
       </nav>
-      <section id="hero-section" class="border-btm">
-        <div class="container py--1">
-          <div class="grid">
-            <div class="hero-content">
-              <h1 class="hero-header heading-secondary">Hello.</h1>
-              <div class="text-content">
-                <p class="text-description">
-                  Here, you'll discover a curated collection of my passions,
-                  projects, and explorations.
-                  <span class="text-highlight">Welcome to my website</span> – a
-                  gateway to the creative endeavors and insights I'm excited to
-                  share with you.
-                </p>
-                <a href="#frontend-section" class="btn">Explore &darr;</a>
-              </div>
-            </div>
-            <div class="hero-img-container"></div>
-          </div>
-        </div>
-      </section>
     </header>
-
-    <main>
-      <section id="frontend-section" class="border-btm">
-        <div class="container py--1">
-          <div class="grid--sections">
-            <h2 class="heading-secondary">Front-End Mentor.</h2>
-            <div class="text-content">
-              <h3 class="heading-tertinary">
-                My Challenge <span class="text-highlight">Attempts</span>
-              </h3>
-              <p class="text-description">
-                Explore my journey through Frontend Mentor's challenges,
-                starting with the Newbie level. Here, I share my attempts at
-                these introductory challenges, marking the initial steps in my
-                web development journey. Stay tuned as I progress through the
-                various skill levels, sharing my growth and projects along the
-                way
-              </p>
-              <p class="list-description">Front-End Mentor Levels:</p>
-              <ul class="list-items">
-                <li class="list-item">
-                  <ion-icon class="icon" name="cube-outline"></ion-icon>Newbie
-                </li>
-                <li class="list-item">
-                  <ion-icon class="icon" name="cube-outline"></ion-icon>Junior
-                </li>
-                <li class="list-item">
-                  <ion-icon class="icon" name="cube-outline"></ion-icon
-                  >Intermediate
-                </li>
-                <li class="list-item">
-                  <ion-icon class="icon" name="cube-outline"></ion-icon>Advanced
-                </li>
-                <li class="list-item">
-                  <ion-icon class="icon" name="cube-outline"></ion-icon>Guru
-                </li>
-              </ul>
-              <a href="./projects/frontend-mentor/index.html" class="btn"
-                >View Challenges
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="fifty-projects-section" class="border-btm">
-        <div class="container py--1">
-          <div class="grid--sections">
-            <h2 class="heading-secondary">50 Projects in 50 Days.</h2>
-            <div class="text-content">
-              <h3 class="heading-tertinary">
-                My Project <span class="text-highlight">Attempts</span>
-              </h3>
-              <p class="text-description">
-                Embark on a transformative journey through '50 Projects in 50
-                Days,' a Udemy course curated by Traversy Media. Delve into
-                daily HTML, CSS, and JavaScript projects, witnessing my
-                dedicated exploration and growth as I tackle each of the 50
-                engaging challenges provided by this insightful course.
-              </p>
-
-              <a href="#" class="btn">View Projects </a>
-            </div>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <footer id="footer">
-      <div class="container py--2">
-        <div class="flex">
-          <div class="logo-container">
-            <a href="#"><h2 class="nav-logo">AE</h2></a>
-            <h3>Thank you for visiting</h3>
-          </div>
-          <div class="text-content">
-            <p>This page is a work in progress</p>
-          </div>
-        </div>
-      </div>
-    </footer>
-
-    <script src="./scripts/script.js"></script>
-    <!-- IonIcons -->
-    <script
-      type="module"
-      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
-    ></script>
-    <script
-      nomodule
-      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
-    ></script>
   </body>
 </html>
