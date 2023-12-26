@@ -11,7 +11,7 @@
 
 :root {
   --dark-color: #101010;
-  --primary-color: #fff9db;
+  --primary-color: #fffbe6;
   --accent-color: #a61e4d;
   --max-width: 75rem;
   --font-stack: 'Open Sans', system-ui, -apple-system, BlinkMacSystemFont,
@@ -189,7 +189,7 @@ p {
 
 /* Showcase image */
 #showcase .showcase-image {
-  max-width: 225px;
+  width: 244px;
 
   display: flex;
   justify-content: center;
