@@ -325,14 +325,63 @@ This animation continuously rotates the showcase image.
 .animate-bar {
   height: 100%;
   background-color: var(--accent-color);
-  animation: a 3s ease-in forwards;
+  animation: loadBar 3s ease-in forwards;
 }
 
-@keyframes a {
+@keyframes loadBar {
   from {
     width: 0;
   }
   to {
     width: 100%;
   }
+}
+
+/****************************************************
+ * Projects 
+ ****************************************************/
+
+.projects p {
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+/****************************************************
+ * Footer 
+ ****************************************************/
+.footer {
+  background-color: #202020;
+}
+
+.footer .flex {
+  display: flex;
+  align-items: center;
+}
+
+.footer .left h2 {
+  margin-bottom: 1rem;
+}
+
+.left,
+.right {
+  flex: 1;
+}
+
+.right {
+  display: flex;
+  justify-content: end;
+}
+
+.right {
+  display: flex;
+  gap: 2em;
+}
+
+.right .fab {
+  color: var(--primary-color);
+  transition: transform 0.3s ease;
+}
+
+.right .fab:hover {
+  transform: scale(1.2);
 }
