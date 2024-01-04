@@ -1,0 +1,14 @@
+$website-width: 80rem;
+$primary-color: #ffbc00;
+$light-color: #f4f4f4;
+$medium-color: #ccc;
+$dark-color: #333;
+$bg-img: url('../img/showcase.jpg');
+
+@function set-text-color($color) {
+  @if ($color > 50) {
+    @return #000;
+  } @else {
+    @return #fff;
+  }
+}
