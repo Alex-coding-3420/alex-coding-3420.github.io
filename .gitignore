@@ -1,3 +1,7 @@
 .DS_Store
 .vscode
 .vscode/settings.json
+./sample-websites/node-modules/
+./sample-websites/scss/
+./sample-websites/package-lock.json
+./sample-websites/package.json
