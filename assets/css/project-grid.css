@@ -4,10 +4,6 @@
   gap: 1rem;
 }
 
-.grid img {
-  width: 100%;
-}
-
 .project-item {
   position: relative;
   background-color: var(--accent-color);
@@ -29,11 +25,11 @@
   transition: transform 3s cubic-bezier(0.2, 1, 0.3, 1);
 }
 
-.project-item:hover:after {
+.project-item:hover::after {
   transform: scale(2) translateX(0) translateY(0) rotate(-28deg);
 }
 
-.project-item .project-image {
+.project-item:hover .project-image {
   transform: scale(1.2);
 }
 
