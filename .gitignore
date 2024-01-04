@@ -1,7 +1,7 @@
 .DS_Store
 .vscode
 .vscode/settings.json
-/sample-websites/sass-portfolio-project/node-modules/
-/sample-websites/sass-portfolio-project/scss/
-/sample-websites/sass-portfolio-project/package-lock.json
-/sample-websites/sass-portfolio-project/package.json
+projects/sample-websites/sass-portfolio-project/node_modules/
+projects/sample-websites/sass-portfolio-project/package-lock.json
+projects/sample-websites/sass-portfolio-project/package.json
+projects/sample-websites/sass-portfolio-project/scss/
