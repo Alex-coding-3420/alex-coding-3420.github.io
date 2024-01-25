@@ -45,6 +45,7 @@ h1 {
   justify-content: center;
   transition: flex 1s;
   background-size: cover;
+  cursor: pointer;
 }
 
 .active {
