@@ -16,14 +16,27 @@
   font-weight: bold;
   font-style: italic;
 }
-* {
+*,
+*::after,
+*::before {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
 
+:root {
+  --white: hsl(0, 0%, 100%);
+  --off-white: hsl(0, 0%, 94%);
+  --light-grey: hsl(0, 0%, 86%);
+  --smokey-grey: hsl(0, 1%, 44%);
+  --off-black: hsl(0, 0%, 8%);
+  --purple: hsl(259, 100%, 65%);
+  --light-red: hsl(0, 100%, 67%);
+  --font-size: 2rem;
+}
+
 body {
-  background-color: gray;
+  background-color: var(--off-white);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -31,64 +44,69 @@ body {
   font-family: 'Poppins';
 }
 
-.app {
-  background-color: hsl(0, 0%, 100%);
-  padding: 2rem;
-  border-radius: 15px;
+.age-calculator {
+  background-color: var(--white);
+  padding: 4rem;
+  border-radius: 20px;
   border-bottom-right-radius: 100px;
-  width: 25rem;
+  width: 37.5rem;
 }
 
-label {
-  display: block;
-  color: hsl(0, 1%, 44%);
-  text-transform: uppercase;
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 1.2px;
+.form-group {
+  display: flex;
+  flex-direction: column;
 }
-
-input {
-  padding: 0.5rem 1rem;
-  width: 5rem;
-}
-
 .form {
   display: flex;
+  justify-content: flex-start;
   gap: 1.5rem;
-  padding-bottom: 2rem;
-  border-bottom: 1px solid lightgray;
-  margin-bottom: 1.5rem;
+  border-bottom: 1px solid var(--smokey-grey);
+  padding-bottom: 3rem;
   position: relative;
 }
 
-.text-content {
-  font-size: 2rem;
-  font-weight: 700;
-  font-style: italic;
+.form-label {
+  margin-bottom: 1rem;
 }
 
-.text-content span {
-  color: hsl(259, 100%, 65%);
+.form-input {
+  display: inline-block;
+  max-width: 6rem;
+  padding: 0.8rem 2rem;
 }
 
-.text-content .text {
-  color: hsl(0, 0%, 8%);
-  font-style: italic;
-  font-weight: 700;
-}
-
-.arrow-wrapper {
+.arrow-btn {
+  background-color: var(--purple);
+  padding: 2rem;
+  height: 3rem;
+  width: 3rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: absolute;
   bottom: 0;
-  left: 100%;
+  right: 0;
+  transform: translate(50%, 50%);
 }
-.arrow {
-  box-sizing: content-box;
-  background-color: hsl(259, 100%, 65%);
-  border-radius: 50%;
-  height: 18px;
-  width: 18px;
-  padding: 10px;
-  transform: translate(-50%, 65%);
+
+.btn {
+  display: inline-block;
+  padding: 0.8rem; /* Add the desired padding */
+  border: none;
+  background: url('../assets/images/icon-arrow.svg') no-repeat;
+  background-size: cover; /* Adjust this as needed */
+  width: auto; /* Let the width adjust based on content */
+  cursor: pointer;
+}
+
+.calculated {
+  padding-top: 2rem;
+  font-size: var(--font-size);
+  font-weight: 800;
+  font-style: italic;
+}
+
+.calculated-data {
+  color: var(--purple);
 }

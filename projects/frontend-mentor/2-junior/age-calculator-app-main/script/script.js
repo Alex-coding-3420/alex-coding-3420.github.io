@@ -1,25 +1,48 @@
+'use strict';
 const date = new Date();
 
-document.getElementById('myForm').addEventListener('submit', function (event) {
-  event.preventDefault(); // Prevent form submission
+// Form
+const dayId = document.getElementById('day');
+const monthId = document.getElementById('month');
+const yearId = document.getElementById('year');
+const btnId = document.getElementById('btn');
 
-  // Retrieve values from form inputs
-  const dayValue = parseInt(document.getElementById('day').value, 10);
-  const monthValue = parseInt(document.getElementById('month').value, 10);
-  const yearValue = parseInt(document.getElementById('year').value, 10);
+// Display elements
+const yearsDisplay = document.getElementById('yearsDisplay');
+const monthsDisplay = document.getElementById('monthsDisplay');
+const daysDisplay = document.getElementById('daysDisplay');
 
-  // Get current date
+const ageCalculator = (event) => {
+  event.preventDefault();
+
+  const birthDate = new Date(
+    Number(yearId.value),
+    Number(monthId.value) - 1,
+    Number(dayId.value)
+  );
   const currentDate = new Date();
 
-  // Calculate age
-  const birthDate = new Date(yearValue, monthValue - 1, dayValue); // Month is 0-based
-  const ageDate = new Date(currentDate - birthDate);
-  const years = Math.abs(ageDate.getUTCFullYear() - 1970);
-  const months = ageDate.getUTCMonth();
-  const days = ageDate.getUTCDate() - 1;
+  let yearsDiff = currentDate.getFullYear() - birthDate.getFullYear();
+  let monthsDiff = currentDate.getMonth() - birthDate.getMonth();
+  let daysDiff = currentDate.getDate() - birthDate.getDate();
 
-  // Update content of span elements
-  document.querySelector('.year-item').textContent = years;
-  document.querySelector('.month-item').textContent = months;
-  document.querySelector('.day-item').textContent = days;
-});
+  if (daysDiff < 0) {
+    monthsDiff--;
+    daysDiff += new Date(
+      currentDate.getFullYear(),
+      currentDate.getMonth(),
+      0
+    ).getDate();
+  }
+
+  if (monthsDiff < 0) {
+    yearsDiff--;
+    monthsDiff += 12;
+  }
+
+  yearsDisplay.textContent = yearsDiff;
+  monthsDisplay.textContent = monthsDiff;
+  daysDisplay.textContent = daysDiff;
+};
+
+btnId.addEventListener('click', ageCalculator);
