@@ -49,20 +49,22 @@ body {
   padding: 4rem;
   border-radius: 20px;
   border-bottom-right-radius: 100px;
-  width: 37.5rem;
+  width: 43.75rem;
+}
+
+.form {
+  display: flex;
+  justify-content: flex-start;
+  gap: 2rem;
+  border-bottom: 1px solid var(--smokey-grey);
+  padding-bottom: 3rem;
+  position: relative;
+  font-family: inherit;
 }
 
 .form-group {
   display: flex;
-  flex-direction: column;
-}
-.form {
-  display: flex;
-  justify-content: flex-start;
-  gap: 1.5rem;
-  border-bottom: 1px solid var(--smokey-grey);
-  padding-bottom: 3rem;
-  position: relative;
+  flex-direction: column-reverse;
 }
 
 .form-label {
@@ -71,8 +73,23 @@ body {
 
 .form-input {
   display: inline-block;
-  max-width: 6rem;
-  padding: 0.8rem 2rem;
+  max-width: 8rem;
+  height: 3rem;
+  padding: 0.5rem;
+  font-size: 2rem;
+  border: none;
+  border: 1px solid var(--light-grey);
+  font-family: inherit;
+  font-weight: 700;
+}
+
+.form-input:invalid + .form-label,
+.form-input:invalid ~ .err {
+  color: red;
+}
+
+.err {
+  color: transparent;
 }
 
 .arrow-btn {
@@ -88,6 +105,11 @@ body {
   bottom: 0;
   right: 0;
   transform: translate(50%, 50%);
+  transition: all 0.2s;
+}
+.arrow-btn:hover {
+  transform: translate(50%, 45%);
+  box-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.4);
 }
 
 .btn {
@@ -102,9 +124,10 @@ body {
 
 .calculated {
   padding-top: 2rem;
-  font-size: var(--font-size);
+  font-size: 4rem;
   font-weight: 800;
   font-style: italic;
+  line-height: 1.2;
 }
 
 .calculated-data {

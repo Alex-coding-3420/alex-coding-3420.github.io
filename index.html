@@ -3,201 +3,381 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Font Awesome -->
+    <!-- FavIcon -->
     <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./favicon/apple-touch-icon.png"
     />
-    <!-- My Stylesheet -->
-    <link rel="stylesheet" href="./assets/css/styles.css" />
-    <!-- Script -->
-    <script defer src="./assets/scripts/script.js"></script>
-    <title>Homepage | Alexander Escobar</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./favicon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="./favicon/site.webmanifest" />
+    <link
+      rel="mask-icon"
+      href="./favicon/safari-pinned-tab.svg"
+      color="#5bbad5"
+    />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="theme-color" content="#ffffff" />
+    <title>Portfolio | Alex Escobar</title>
+    <link rel="stylesheet" href="./css/main.css" />
   </head>
   <body>
-    <header id="header">
-      <nav id="navbar">
-        <div class="container">
-          <div class="flex">
-            <a href="#"
-              ><img
-                src="./assets/img/logo-outline.svg"
-                class="logo"
-                width="60px"
-                height="60px"
-            /></a>
-            <ul class="links">
-              <li><a href="#about">About</a></li>
-              <li><a href="#projects">Projects</a></li>
-            </ul>
-          </div>
-        </div>
+    <!-------------------------------------------------
+       NAVBAR
+     ----------------------------------------------->
+    <div class="navbar">
+      <input
+        type="checkbox"
+        name="navbar__checkbox"
+        id="navbar__checkbox"
+        class="navbar__checkbox"
+      />
+      <label for="navbar__checkbox" class="navbar__label">
+        <span class="navbar__icon"></span>
+      </label>
+      <nav class="navbar__nav">
+        <ul class="navbar__list">
+          <li class="navbar__item">
+            <a href="#home" class="navbar__link">Home</a>
+          </li>
+          <li class="navbar__item">
+            <a href="#about" class="navbar__link">About</a>
+          </li>
+          <li class="navbar__item">
+            <a href="#projects" class="navbar__link">Projects</a>
+          </li>
+          <li class="navbar__item">
+            <a href="#contact" class="navbar__link">Contact</a>
+          </li>
+        </ul>
       </nav>
-      <section id="showcase">
-        <div class="container showcase-py section-border">
-          <div class="flex">
-            <div class="showcase-content">
-              <h1 class="showcase-title">
-                <div class="line-1 delay-showcase">Hello there, my name is</div>
-                <div class="line-2 delay-showcase btm-border">Alex Escobar</div>
-              </h1>
-              <p class="line-3 delay-showcase">
-                I'm a recent Computer Science graduate based in Sacramento, CA,
-                eager to explore entry-level opportunities.
-              </p>
-              <a href="#footer" class="btn btn-primary delay-showcase"
-                >Contact Me</a
+    </div>
+
+    <!-- Main Content -->
+    <main class="main-content page-decoration">
+      <!-------------------------------------------------
+           #HOME
+         ----------------------------------------------->
+      <section class="section home" id="home">
+        <div class="container flex f--col j--sa b-b">
+          <div class="shapes">
+            <span class="shape a-shape a-shape--1"></span>
+            <span class="shape a-shape a-shape--2 mr--2 ml--2"></span>
+            <span class="shape a-shape a-shape--3"></span>
+          </div>
+          <div>
+            <h1 class="heading-primary a-heading-primary line">
+              Portfolio<span class="color-yellow">.</span>
+            </h1>
+            <p class="home__secondary a-home__secondary">
+              <span
+                class="home__secondary--type"
+                data-wait="3000"
+                data-words='["Frontend /","Backend /","Software /"]'
               >
+              </span>
+              Developer
+            </p>
+          </div>
+          <div class="flex j--sb a--center">
+            <p class="home__p a-home-p a-home-p1">Alex Escobar</p>
+            <p class="home__p a-home-p a-home-p2 mr--3">Sacramento, CA</p>
+          </div>
+        </div>
+      </section>
+
+      <!-------------------------------------------------
+       #ABOUT
+     ----------------------------------------------->
+      <section class="section about" id="about">
+        <div class="container sec-pb sec-pt b-b">
+          <h2 class="heading-secondary h2-mb">
+            About<span class="color-yellow">.</span>
+          </h2>
+          <div class="section__flex">
+            <div class="about__me section__flex-col--1 element-bg-r">
+              <h3 class="heading-tertiary h3-pb">
+                <span class="heading-tertiary-sp"
+                  >Hello<span class="color-yellow">,</span></span
+                ><span class="heading-tertiary-sp">I'm Alex</span
+                ><span class="color-yellow">.</span>
+              </h3>
+              <p class="about__p">
+                I’m a recent CS graduate from California State University,
+                Sacramento, with a Bachelors of Science in Computer Science. I'm
+                really passionate about technology, especially web and software
+                development, and I'm excited to jumpstart my career in this
+                field. I have strong skills in Java, Python, and JavaScript, and
+                I've worked on many academic projects ranging from creating and
+                maintaining databases, to team projects developing a product for
+                a client. I'm quick to learn new things, pay close attention to
+                details, and I work well in teams. Right now, I'm searching for
+                entry-level opportunities where I can contribute to innovative
+                projects.
+              </p>
             </div>
-            <div class="showcase-image">
-              <img src="./assets/img/Ellipse-1.svg" class="circle-pattern" />
+            <div class="resume section__flex-col--2 element-bg-l">
+              <div class="resume__grid">
+                <!-- Education -->
+                <div class="resume__item resume__item--edu">
+                  <div class="resume__item--container">
+                    <h4 class="resume__item--title h4-pb">
+                      Education<span class="color-yellow">.</span>
+                    </h4>
+                    <div class="section__flex f--wrap">
+                      <p
+                        class="section__flex--col-1 bold-3 color-yellow resume-text"
+                      >
+                        Sacramento<br />State
+                      </p>
+                      <div class="section__flex--col-1">
+                        <p class="resume-text">2020 &ndash; 2023</p>
+                        <p class="bold resume-text">B.S. in CS</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Skills -->
+                <div class="resume__item resume__item--skill">
+                  <div class="resume__item--container">
+                    <h4 class="resume__item--title h4-pb">
+                      Skills<span class="color-yellow">.</span>
+                    </h4>
+                    <div class="flex j--sb g--3">
+                      <p class="resume-font">
+                        <span class="color-yellow bold-3">Languages</span>:
+                        <br />
+                        Java, Javascript, Python, HTML/CSS, SQL
+                      </p>
+                      <p class="resume-font">
+                        <span class="color-yellow bold-3">Developer Tools</span
+                        >:<br />
+                        VS Code, Eclipes, IntelliJ, CLI
+                      </p>
+                      <p class="resume-font">
+                        <span class="color-yellow bold-3">Technologies</span
+                        >:<br />
+                        Git, GitHub, Linux, AWS, MySQL WorkBench, MS Office
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <!-- Course -->
+                <div class="resume__item resume__item--course">
+                  <div class="resume__item--container">
+                    <h4 class="resume__item--title h4-pb">
+                      Course<span class="color-yellow">.</span>
+                    </h4>
+                    <ul class="resume__item--course-list flex f--col f--wrap">
+                      <li>&ndash; Computer Networking</li>
+                      <li>&ndash; Algorithm Analysis</li>
+                      <li>&ndash; SW Engineering</li>
+                    </ul>
+                    <ul class="resume__item--course-list flex f--col f--wrap">
+                      <li>&ndash; Data Structures</li>
+                      <li>&ndash; DBMS</li>
+                      <li>&ndash; OS Principles</li>
+                    </ul>
+                  </div>
+                </div>
+                <!-- Projects -->
+                <div class="resume__item resume__item--project">
+                  <div class="resume__item--container">
+                    <h4 class="resume__item--title h4-pb">
+                      Projects<span class="color-yellow">.</span>
+                    </h4>
+                    <!-- Project 1 -->
+                    <div class="flex j--sb g--3">
+                      <div class="flex-1">
+                        <p
+                          class="resume__item--project-title color-yellow bold-3 resume-font"
+                        >
+                          OOP Game
+                        </p>
+                        <div class="resume__item--row">
+                          <p class="bold-2 resume-font">Java, Codename One</p>
+                          <p class="resume-font">June 2023 &ndash; July 2023</p>
+                        </div>
+                        <ul class="resume__item--project-list">
+                          <li>
+                            Implemented object-oriented programming principles
+                            such as inheritance to create character types and
+                            abstraction to model essential properties and
+                            behaviors related to each class.
+                          </li>
+                          <li>
+                            Used Codename One API to create a GUI to display the
+                            visuals, stats, and buttons of the game.
+                          </li>
+                        </ul>
+                      </div>
+                      <!-- Project 2 -->
+                      <div class="flex-1">
+                        <p
+                          class="resume__item--project-title color-yellow bold-3 resume-font"
+                        >
+                          IT Ticketing System
+                        </p>
+                        <div class="resume__item--row">
+                          <p class="bold-2 resume-font">HTML, CSS, JS, AWS</p>
+                          <p class="resume-font">Sept 2022 &ndash; May 2023</p>
+                        </div>
+                        <ul class="resume__item--project-list">
+                          <li>
+                            Collaborated on developing a service to streamline
+                            the process of submitting maintenance requests
+                            reports.
+                          </li>
+                          <li>
+                            Developed frontend UI with AWS-integrated backend
+                            using HTML, CSS, JavaScript, AWS Amplify, Lambda,
+                            DynamoDB, and API Gateway for optimal website
+                            functionality.
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
-    </header>
-    <main id="main">
-      <section id="about">
-        <div class="container py-4 section-border">
-          <article class="about-me">
-            <div class="section-title">
-              <h2 class="btm-border">About Me</h2>
+      <!-------------------------------------------------
+         #PROJECTS
+       ----------------------------------------------->
+      <section class="section projects" id="projects">
+        <div class="container sec-pb sec-pt b-b">
+          <h2 class="heading-secondary h2-mb">
+            Projects<span class="color-yellow">.</span>
+          </h2>
+          <div class="section__flex section__flex--r-reverse">
+            <div class="section__flex-col--1 element-bg-r">
+              <h3 class="heading-tertiary h3-pb">
+                <span class="heading-tertiary-sp">Explore My</span
+                ><span class="heading-tertiary-sp">Work</span
+                ><span class="color-yellow">.</span>
+              </h3>
+              <p>
+                Take a look at some of the web development projects I've been
+                working on. These projects represent my journey in learning and
+                experimenting with HTML, CSS, and JavaScript.
+              </p>
             </div>
-            <p>
-              Hello, I’m Alexander Escobar, originally from Los Angeles, CA. I
-              was born in 1994, and lived in Los Angeles until 2020, when I
-              moved to Sacramento, CA to study at California State University,
-              Sacramento. I am a first-generation college student and became the
-              first one in my family to graduate university by earning a
-              Bachelor’s degree in Computer Science in the summer of 2023.
-            </p>
-            <p>
-              I am actively pursuing any entry-level positions in either
-              front-end or back-end development to kickstart my career journey
-              in the tech industry.
-            </p>
-          </article>
-          <article class="py-4">
-            <aside class="bar-graph">
-              <div class="section-subtitle">
-                <h3 class="btm-border">SKILLS</h3>
-              </div>
-              <p>
-                <i class="fab fa-java fa-2x"></i
-                ><span><span>JAVA</span> - 3 YEARS</span>
-              </p>
-              <div class="progress">
-                <div class="stat" style="width: 99%; height: 5px">
-                  <div class="animate-bar"></div>
+            <div class="section__flex-col--2">
+              <div class="projects__grid">
+                <!-- ITEM -->
+                <div class="projects__item projects__item--1">
+                  <a
+                    href="https://alex-coding-3420.github.io/projects/odin-project/Etch-a-Sketch/index.html"
+                    target="_blank"
+                    class="projects__link"
+                  >
+                    <div class="projects__img--container"></div>
+                    <div class="projects__text">
+                      <h4 class="projects__text--title">Etch-a-Sketch</h4>
+                    </div>
+                  </a>
+                </div>
+                <!-- ITEM -->
+                <div class="projects__item projects__item--2">
+                  <a
+                    href="https://alex-coding-3420.github.io/projects/collapsing-panels/index.html"
+                    target="_blank"
+                    class="projects__link"
+                  >
+                    <div class="projects__img--container"></div>
+                    <div class="projects__text">
+                      <h4 class="projects__text--title">Collapsing Panels</h4>
+                    </div>
+                  </a>
+                </div>
+                <!-- ITEM -->
+                <div class="projects__item projects__item--3">
+                  <a
+                    href="https://alex-coding-3420.github.io/projects/odin-project/calculator/index.html"
+                    target="_blank"
+                    class="projects__link"
+                  >
+                    <div class="projects__img--container"></div>
+                    <div class="projects__text">
+                      <h4 class="projects__text--title">Calculator</h4>
+                    </div>
+                  </a>
+                </div>
+                <!-- ITEM -->
+                <div class="projects__item projects__item--4">
+                  <a
+                    href="https://alex-coding-3420.github.io/projects/odin-project/rock-paper-scissors/index.html"
+                    target="_blank"
+                    class="projects__link"
+                  >
+                    <div class="projects__img--container"></div>
+                    <div class="projects__text">
+                      <h4 class="projects__text--title">
+                        Rock, Paper, Scissors
+                      </h4>
+                    </div>
+                  </a>
                 </div>
               </div>
-              <p>
-                <i class="fab fa-js fa-2x"></i
-                ><span><span>JS</span> - 1.5 YEARS</span>
-              </p>
-              <div class="progress">
-                <div class="stat" style="width: 49.5%; height: 5px">
-                  <div class="animate-bar"></div>
-                </div>
-              </div>
-              <!-- C/C++ -->
-              <p>
-                <i class="fas fa-code"></i
-                ><span><span>C/C++</span> - 1 YEARS</span>
-              </p>
-              <div class="progress">
-                <div class="stat" style="width: 33%; height: 5px">
-                  <div class="animate-bar"></div>
-                </div>
-              </div>
-              <!-- Python -->
-              <p>
-                <i class="fab fa-python fa-2x"></i
-                ><span><span>PYTHON</span> - 2 YEARS</span>
-              </p>
-              <div class="progress">
-                <div class="stat" style="width: 66%; height: 5px">
-                  <div class="animate-bar"></div>
-                </div>
-              </div>
-              <!-- HTML -->
-              <p>
-                <i class="fab fa-html5 fa-2x"></i
-                ><span><span>HTML</span> - 1.5 YEARS</span>
-              </p>
-              <div class="progress">
-                <div class="stat" style="width: 49.5%; height: 5px">
-                  <div class="animate-bar"></div>
-                </div>
-              </div>
-              <!-- CSS -->
-              <p>
-                <i class="fab fa-css3 fa-2x"></i
-                ><span><span>CSS</span> - 1.5 YEARS</span>
-              </p>
-              <div class="progress">
-                <div class="stat" style="width: 49.5%; height: 5px">
-                  <div class="animate-bar"></div>
-                </div>
-              </div>
-              <!-- SQL -->
-              <p>
-                <i class="fas fa-database fa-2x"></i>
-                <span><span>SQL</span> - 1 YEARS</span>
-              </p>
-              <div class="progress">
-                <div class="stat" style="width: 33%; height: 5px">
-                  <div class="animate-bar"></div>
-                </div>
-              </div>
-            </aside>
-          </article>
+            </div>
+          </div>
         </div>
       </section>
-      <!-- Projects -->
-      <section id="projects" class="projects">
-        <div class="container py-4 section-border">
-          <div class="section-title">
-            <h2 class="btm-border">Projects</h2>
+
+      <!-------------------------------------------------
+         CONTACT
+       ----------------------------------------------->
+      <section class="section contact" id="contact">
+        <div class="container sec-pb sec-pt b-b">
+          <h2 class="heading-secondary h2-mb">
+            Contact<span class="color-yellow">.</span>
+          </h2>
+          <div class="contact__container">
+            <div class="contact__container--left">
+              <h3 class="heading-tertiary pb-lg">
+                <span class="heading-tertiary-sp">Let's</span
+                ><span class="heading-tertiary-sp">Connect</span
+                ><span class="color-yellow">.</span>
+              </h3>
+              <p class="contact__text">
+                If you'd like to discuss any opportunities further, please feel
+                free to contact me via
+                <a
+                  class="contact__link"
+                  href="mailto:a.escobar5550@icloud.com"
+                  target="_blank"
+                >
+                  Email
+                </a>
+                or
+                <a
+                  href="https://www.linkedin.com/in/alexander-h-escobar"
+                  class="contact__link"
+                  target="_blank"
+                  >Linkedin</a
+                >. I'm always open to new opportunities and exciting projects.
+              </p>
+            </div>
           </div>
-          <p>
-            Below are some of the projects I've worked on. Feel free to explore
-            and learn more about my work.
-          </p>
-          <a href="./portfolio-pages/projects.html" class="btn btn-primary"
-            >View My Portfolio</a
-          >
         </div>
       </section>
     </main>
-    <footer id="footer" class="footer">
-      <div class="container py-3">
-        <div class="flex">
-          <div class="left">
-            <h2>Thank you for visiting</h2>
-            <p>
-              If you'd like to reach out to me, please contact me via Linkedin.
-              If you'd like to see more of my work, please check out my GitHub
-              profile.
-            </p>
-          </div>
-          <ul class="right">
-            <li>
-              <a
-                target="_blank"
-                href="https://www.linkedin.com/in/alexander-h-escobar"
-              >
-                <i class="fab fa-linkedin fa-3x"></i>
-              </a>
-            </li>
-            <li>
-              <a target="_blank" href="https://github.com/Alex-coding-3420">
-                <i class="fab fa-github fa-3x"></i
-              ></a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </footer>
+    <script src="./script/app.js"></script>
+    <script src="./script/typewriter.js"></script>
   </body>
 </html>
